@@ -43,11 +43,12 @@ cheap();
 //function globalCurrency to return items that have the GBP currency
 function globalCurrency(){
 
-
+//filter method to return the item with the currency code of GBP
   britishItems = items.filter(function(item){
     return item.currency_code === 'GBP';
   });
 
+  // forEach method to console.log the items with GBP
   britishItems.forEach(function(item){
     console.log(item.title + ' is £'+ item.price);
   })
@@ -58,9 +59,11 @@ globalCurrency();
 //function woodenItems to return items made of wood
 function woodenItems(){
 
+    //filter method to return the items made of wood
     const woodItems = items.filter(function(item){
       return item.materials.includes('wood');
     });
+    // forEach method to console.log the items made of wood
     const woodLog = woodItems.forEach(function(item){
       console.log(`${item.title} is made of wood`);
     })
@@ -74,12 +77,14 @@ woodenItems();
 
  function largeItems(){
 
+   //filter method to return the items that have 8 or more materials
   const moreThanEight = items.filter(function(item){
     return item.materials.length >= 8;
   })
+  //forEach method to console.log items with 8 or more materials
   const matLog= moreThanEight.forEach(function(item){
     console.log(`${item.title} has ${item.materials.length} materials:`);
-
+    //forEach moethod to console.log the materials
     item.materials.forEach(function(item){
       console.log(item);
     })
@@ -91,6 +96,7 @@ largeItems();
 
 
 function madeBySellers(){
+  //filter method to return items that were made by the seller
   const madeBySeller = items.filter(function(item){
     return item.who_made === 'i_did';
   });
